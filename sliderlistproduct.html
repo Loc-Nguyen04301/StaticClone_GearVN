@@ -1,0 +1,155 @@
+<script>
+    var swiper = new Swiper(".mySwiper-product", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            700: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            900: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1300: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+            },
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+<script>
+    var listProduct = [
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus AIR",
+            new_price: "3.090.000₫",
+            old_price: "2.490.000₫",
+            percentage: "-19%",
+            sold_number: "4"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-black-gold_8e11f039be024adc83704bcae50a02fb_80339c37aeef411c96d0ed9f4422f565_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus Black Gold",
+            new_price: "3.090.000₫",
+            old_price: "2.390.000₫",
+            percentage: "-22%",
+            sold_number: "5"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-dareu-ek387l-rgb_f20ea0c75b16492ba628aee4e77e3612_fc5406b4a56f444abc6d9e7fc7f1fc13_grande.gif",
+            title: `Bàn phím E-Dra EK387L RGB Black Gold`,
+            new_price: "849.000₫",
+            old_price: "690.000₫",
+            percentage: "-18%",
+            sold_number: "22"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus AIR",
+            new_price: "3.090.000₫",
+            old_price: "2.490.000₫",
+            percentage: "-19%",
+            sold_number: "4"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-black-gold_8e11f039be024adc83704bcae50a02fb_80339c37aeef411c96d0ed9f4422f565_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus Black Gold",
+            new_price: "3.090.000₫",
+            old_price: "2.390.000₫",
+            percentage: "-22%",
+            sold_number: "5"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-dareu-ek387l-rgb_f20ea0c75b16492ba628aee4e77e3612_fc5406b4a56f444abc6d9e7fc7f1fc13_grande.gif",
+            title: "Bàn phím E-Dra EK387L RGB Black Gold",
+            new_price: "849.000₫",
+            old_price: "690.000₫",
+            percentage: "-18%",
+            sold_number: "22"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus AIR",
+            new_price: "3.090.000₫",
+            old_price: "2.490.000₫",
+            percentage: "-19%",
+            sold_number: "4"
+        },
+        {
+            img: "https://product.hstatic.net/200000722513/product/bp-akko-pc98b-black-gold_8e11f039be024adc83704bcae50a02fb_80339c37aeef411c96d0ed9f4422f565_grande.gif",
+            title: "Bàn phím cơ AKKO PC98B Plus Black Gold",
+            new_price: "3.090.000₫",
+            old_price: "2.390.000₫",
+            percentage: "-22%",
+            sold_number: "5"
+        },
+    ]
+
+    let list = document.querySelector(".mySwiper-product .swiper-wrapper")
+
+    listProduct.forEach((product) => {
+        var swiperslideEl = document.createElement("div")
+        swiperslideEl.className = "swiper-slide"
+        var divEl = document.createElement("div")
+        swiperslideEl.appendChild(divEl)
+
+        var divImage = document.createElement("div")
+        divImage.className = "image"
+        var aEl = document.createElement("a");
+        var imgEl = document.createElement("img");
+        divImage.appendChild(aEl);
+        aEl.appendChild(imgEl)
+        aEl.href = "/"
+        imgEl.src = product.img
+
+        var divTitle = document.createElement("div")
+        divTitle.className = "title"
+        var aEl = document.createElement("a");
+        aEl.innerText = product.title
+        aEl.href = "/"
+        divTitle.appendChild(aEl)
+
+        var divOldPrice = document.createElement("div")
+        divOldPrice.className = "old_price"
+        var spanEl = document.createElement("span")
+        spanEl.className = "number"
+        spanEl.innerText = product.old_price
+        divOldPrice.appendChild(spanEl)
+
+        var divNewPrice = document.createElement("div")
+        divNewPrice.className = "new_price"
+        var spanEl1 = document.createElement("span")
+        spanEl1.className = "number"
+        spanEl1.innerText = product.new_price
+        var spanEl2 = document.createElement("span")
+        spanEl2.className = "percentage"
+        spanEl2.innerText = product.percentage
+        divNewPrice.append(spanEl1, spanEl2)
+
+        divEl.append(divImage, divTitle, divOldPrice, divNewPrice);
+        list.appendChild(swiperslideEl)
+    })
+</script>
+
+<div class="swiper mySwiper-product">
+    <div class="swiper-wrapper">
+    </div>
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>

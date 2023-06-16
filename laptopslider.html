@@ -1,0 +1,450 @@
+<script>
+    const typeLap = {
+        ASUS: 'asus',
+        MSI: 'msi',
+        LENOVO: 'lenovo',
+        HP: 'hp',
+        DELL: 'dell',
+        LG: 'lg',
+    }
+
+    const laptopList = [
+        {
+            id: "1",
+            type: typeLap.ASUS,
+            title: 'Laptop ASUS ProArt Studiobook 16 OLED H7600ZM L2079W',
+            img: 'https://product.hstatic.net/200000722513/product/t-studiobook-16-oled-h7600zm-l2079w-1_aa5729e447954951b9f46f79e2d81999_8f8c86376eca47cabedd3c1bd58f80d6_grande.png',
+            old_price: "69.990.000₫",
+            new_price: "57.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "2",
+            type: typeLap.ASUS,
+            title: 'Laptop ASUS ProArt Studiobook 16 OLED H7600ZM L2079W',
+            img: 'https://product.hstatic.net/200000722513/product/t-studiobook-16-oled-h7600zm-l2079w-1_aa5729e447954951b9f46f79e2d81999_8f8c86376eca47cabedd3c1bd58f80d6_grande.png',
+            old_price: "69.990.000₫",
+            new_price: "57.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "3",
+            type: typeLap.ASUS,
+            title: 'Laptop ASUS ProArt Studiobook Pro 16 OLED W7600Z3A L2048W',
+            img: 'https://product.hstatic.net/200000722513/product/diobook-pro-16-oled-w7600z3a-l2048w-1_acda9b80ce8b4d50ae41cb6d4b28eced_0ab4e3bafba04405b2f68aac8147e9a4_grande.png',
+            old_price: "82.990.000₫",
+            new_price: "69.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "4",
+            type: typeLap.ASUS,
+            title: 'Laptop ASUS Vivobook 14X OLED A1403ZA KM066W',
+            img: 'https://product.hstatic.net/200000722513/product/km066-ban-chay_b3656fe6bfb24b5d8dd163b3431f0c5c_grande.png',
+            old_price: "20.990.000₫",
+            new_price: "14.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "5",
+            type: typeLap.ASUS,
+            title: 'Laptop ASUS Vivobook 14X OLED A1403ZA KM161W',
+            img: 'https://product.hstatic.net/200000722513/product/us-vivobook-14x-oled-a1403za-km161w-1_1e8085b65dd74b46b5a3049e1babee6f_e91ef40113f24b75adf181be03475edd_grande.png',
+            old_price: "20.990.000₫",
+            new_price: "14.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "6",
+            type: typeLap.ASUS,
+            title: 'Laptop Asus Vivobook 15 X515EA BR2045W',
+            img: 'https://product.hstatic.net/200000722513/product/top-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba_d045876cfa27422cb4c0ef26bd660f65_grande.png',
+            old_price: "16.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "7",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator Z16 A11UET 025VN',
+            img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
+            old_price: "16.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "8",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator Z16 A11UET 025VN',
+            img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
+            old_price: "16.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "9",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator M16 B13VE 830VN',
+            img: "https://product.hstatic.net/200000722513/product/laptop-msi-creator-z16-a11uet-025vn-1_7d9d4b9e40ac4c4497a1acfd999e4fd3_353be3dcfc9e4439837e454acd028e95_grande.png",
+            old_price: "45.990.000₫",
+            new_price: "34.990.000₫",
+            percentage: "-17%"
+        }, {
+            id: "10",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator Z16 HX Studio B13VFTO 063VN',
+            img: "https://product.hstatic.net/200000722513/product/063vn_54f15e9f0d864470b6f381602fa7b1d8_453438f1b4964374924093ce75b3906c_grande.png",
+            old_price: "23.990.000₫",
+            new_price: "15.990.000₫",
+            percentage: "-17%"
+        }, {
+            id: "11",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator M16 B13VE 830VN',
+            img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
+            old_price: "16.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "12",
+            type: typeLap.MSI,
+            title: 'Laptop MSI Creator Z16 A11UET 025VN',
+            img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
+            old_price: "16.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "13",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo IdeaPad 1 15AMN7 82VG0022VN',
+            img: "https://product.hstatic.net/200000722513/product/-lenovo-ideapad-1-15amn7-82vg0022vn-1_a27e87f1ca374e9f9f9706b46f522bf2_a981a1a533894e28b7cde6e59a2feed2_grande.png",
+            old_price: "33.990.000₫",
+            new_price: "29.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "14",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo ThinkPad E14 21E300E3VN',
+            img: "https://product.hstatic.net/200000722513/product/ptop-lenovo-thinkpad-e14-21e300e3vn-1_6d3de771290643da9c66a438269f6905_a34e1fec65984b57889f670c928f8542_master.png",
+            old_price: "39.990.000₫",
+            new_price: "35.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "15",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo Ideapad 5 Pro 14ITL6 82L300MAVN',
+            img: "https://product.hstatic.net/200000722513/product/82l300mavn_4d1d60d9c525463990f5a6e0d9ba6bc6_8e0b838478004c1c8c1176bc9b3ab32e_grande.png",
+            old_price: "55.990.000₫",
+            new_price: "49.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "16",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo IdeaPad 1 15AMN7 82VG0022VN',
+            img: "https://product.hstatic.net/200000722513/product/-lenovo-ideapad-1-15amn7-82vg0022vn-1_a27e87f1ca374e9f9f9706b46f522bf2_a981a1a533894e28b7cde6e59a2feed2_grande.png",
+            old_price: "33.990.000₫",
+            new_price: "29.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "16",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo IdeaPad 5 14ABA7 82SE007DVN',
+            img: "https://product.hstatic.net/200000722513/product/82se007dvn_f002bf7bbbbf4c35be3de1060dfb38ff_4c0ca26f994742e898fa200e1e848e8f_grande.png",
+            old_price: "19.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        },
+        {
+            id: "18",
+            type: typeLap.LENOVO,
+            title: 'Laptop Lenovo IdeaPad 5 14ABA7 82SE007DVN',
+            img: "https://product.hstatic.net/200000722513/product/82se007dvn_f002bf7bbbbf4c35be3de1060dfb38ff_4c0ca26f994742e898fa200e1e848e8f_grande.png",
+            old_price: "19.990.000₫",
+            new_price: "12.990.000₫",
+            percentage: "-17%"
+        }
+    ]
+
+    const typeLapList = Object.values(typeLap)
+
+    var selectedLaptopList = laptopList.filter((laptop) => laptop.type === typeLap.ASUS);
+
+    var selectedElement = document.querySelector(".mySwiper-laptop .swiper-wrapper")
+
+    var cart = [];
+
+    // create the list type of laptop in UI 
+    var manufacturerElement = document.querySelector(".laptop .section-heading .box-right");
+    var ulEl = document.createElement("ul");
+    typeLapList.forEach((type) => {
+        let liEl = document.createElement("li");
+        liEl.className = type
+        let a = document.createElement("a");
+        a.innerText = type
+        liEl.appendChild(a)
+        ulEl.appendChild(liEl)
+    })
+    manufacturerElement.prepend(ulEl)
+
+    // change list Laptop when Click Event Handler 
+    typeLapList.forEach((type) => {
+        document.querySelector(`.${type}`).addEventListener("click", () => {
+            let selectedLaptopList = laptopList.filter((laptop) => laptop.type === type);
+            re_renderLaptopList(selectedLaptopList)
+        })
+    })
+
+    renderLaptopList(selectedLaptopList)
+
+    function renderLaptopList(laptopList) {
+        laptopList.forEach((product) => {
+            var swiperslideEl = document.createElement("div")
+            swiperslideEl.className = "swiper-slide"
+            var divEl = document.createElement("div")
+            swiperslideEl.appendChild(divEl)
+
+            var divImage = document.createElement("div")
+            divImage.className = "image"
+            var aEl = document.createElement("a");
+            var imgEl = document.createElement("img");
+            divImage.appendChild(aEl);
+            aEl.appendChild(imgEl)
+            aEl.href = "/"
+            imgEl.src = product.img
+
+            var divTitle = document.createElement("div")
+            divTitle.className = "title"
+            var aEl = document.createElement("a");
+            aEl.innerText = product.title
+            aEl.href = "/"
+            divTitle.appendChild(aEl)
+
+            var divOldPrice = document.createElement("div")
+            divOldPrice.className = "old_price"
+            var spanEl = document.createElement("span")
+            spanEl.className = "number"
+            spanEl.innerText = product.old_price
+            divOldPrice.appendChild(spanEl)
+
+            var divNewPrice = document.createElement("div")
+            divNewPrice.className = "new_price"
+            var spanEl1 = document.createElement("span")
+            spanEl1.className = "number"
+            spanEl1.innerText = product.new_price
+            var spanEl2 = document.createElement("span")
+            spanEl2.className = "percentage"
+            spanEl2.innerText = product.percentage
+            divNewPrice.append(spanEl1, spanEl2)
+
+            var button = document.createElement("button")
+            button.innerText = "Buy"
+            button.id = product.id
+
+            divEl.append(divImage, divTitle, divOldPrice, divNewPrice, button);
+            selectedElement.appendChild(swiperslideEl)
+
+            document.getElementById(product.id).addEventListener("click", () => {
+                const existingItem = cart.find((item) => item.id === product.id)
+                if (!existingItem) {
+                    cart.push({ ...product, quantity: 1 })
+                } else {
+                    existingItem.quantity += 1
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                const savedCart = JSON.parse(localStorage.getItem('cart'))
+                const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
+                document.getElementById("totalProductBuy").textContent = totalProductBuy
+            })
+        })
+    }
+
+    function re_renderLaptopList(laptopList) {
+        const wrapperNode = document.querySelector(".mySwiper-laptop .swiper-wrapper")
+        while (wrapperNode.firstChild) wrapperNode.removeChild(wrapperNode.lastChild)
+        laptopList.forEach((product) => {
+            var swiperslideEl = document.createElement("div")
+            swiperslideEl.className = "swiper-slide"
+            var divEl = document.createElement("div")
+            swiperslideEl.appendChild(divEl)
+
+            var divImage = document.createElement("div")
+            divImage.className = "image"
+            var aEl = document.createElement("a");
+            var imgEl = document.createElement("img");
+            divImage.appendChild(aEl);
+            aEl.appendChild(imgEl)
+            aEl.href = "/"
+            imgEl.src = product.img
+
+            var divTitle = document.createElement("div")
+            divTitle.className = "title"
+            var aEl = document.createElement("a");
+            aEl.innerText = product.title
+            aEl.href = "/"
+            divTitle.appendChild(aEl)
+
+            var divOldPrice = document.createElement("div")
+            divOldPrice.className = "old_price"
+            var spanEl = document.createElement("span")
+            spanEl.className = "number"
+            spanEl.innerText = product.old_price
+            divOldPrice.appendChild(spanEl)
+
+            var divNewPrice = document.createElement("div")
+            divNewPrice.className = "new_price"
+            var spanEl1 = document.createElement("span")
+            spanEl1.className = "number"
+            spanEl1.innerText = product.new_price
+            var spanEl2 = document.createElement("span")
+            spanEl2.className = "percentage"
+            spanEl2.innerText = product.percentage
+            divNewPrice.append(spanEl1, spanEl2)
+
+            var button = document.createElement("button")
+            button.innerText = "Buy"
+            button.id = product.id
+
+            divEl.append(divImage, divTitle, divOldPrice, divNewPrice, button);
+            selectedElement.appendChild(swiperslideEl)
+
+            document.getElementById(product.id).addEventListener("click", () => {
+                const existingItem = cart.find((item) => item.id === product.id)
+                if (!existingItem) {
+                    cart.push({ ...product, quantity: 1 })
+                } else {
+                    existingItem.quantity += 1
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                const savedCart = JSON.parse(localStorage.getItem('cart'))
+                const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
+                document.getElementById("totalProductBuy").textContent = totalProductBuy
+            })
+        })
+    }
+</script>
+
+<script>
+    if (localStorage.getItem('cart')) {
+        const savedCart = JSON.parse(localStorage.getItem('cart'))
+        const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
+        document.getElementById("totalProductBuy").textContent = totalProductBuy
+    } 
+</script>
+
+
+<script>
+    var swiper = new Swiper(".mySwiper-laptop", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            700: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            900: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+            },
+            1300: {
+                slidesPerView: 5,
+                spaceBetween: 10,
+            },
+        },
+    })
+</script>
+
+<div class="swiper mySwiper-laptop">
+    <div class="swiper-wrapper">
+        <!-- <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/">
+                        <img
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="1">buy</button>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/"><img property: { chip: 'i5-13420H' , card: 'RTX 4050' , ram: '8GB' ,
+                            driver: '512G' , mornitor: '15.6"' },
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="2">buy</button>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/"><img property: { chip: 'i5-13420H' , card: 'RTX 4050' , ram: '8GB' ,
+                            driver: '512G' , mornitor: '15.6"' },
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="3">buy</button>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/"><img property: { chip: 'i5-13420H' , card: 'RTX 4050' , ram: '8GB' ,
+                            driver: '512G' , mornitor: '15.6"' },
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="4">buy</button>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/"><img property: { chip: 'i5-13420H' , card: 'RTX 4050' , ram: '8GB' ,
+                            driver: '512G' , mornitor: '15.6"' },
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="5">buy</button>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <div class="image"><a href="/"><img property: { chip: 'i5-13420H' , card: 'RTX 4050' , ram: '8GB' ,
+                            driver: '512G' , mornitor: '15.6"' },
+                            src="https://product.hstatic.net/200000722513/product/bp-akko-pc98b-plusair_f7d80063ca6d49bba76adeddc62635d2_0e247fa83d9e4900a040e28822c15015_grande.gif"></a>
+                </div>
+                <div class="title"><a href="/">Bàn phím cơ AKKO PC98B Plus AIR</a></div>
+                <div class="old_price"><span class="number">2.490.000₫</span></div>
+                <div class="new_price"><span class="number">3.090.000₫</span><span class="percentage">-19%</span></div>
+                <button value="6">buy</button>
+            </div>
+        </div> -->
+    </div>
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
