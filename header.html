@@ -1,3 +1,26 @@
+<script>
+    var toggleTheme = false
+    document.querySelector(".list-item").addEventListener("click", () => {
+        if (!toggleTheme) {
+            document.querySelector("#sidebar-menu").classList.add("op-1")
+            document.querySelector("#site-overlay").classList.add("op-1")
+            toggleTheme = true
+        }
+    })
+</script>
+
+
+<!-- show total quantity product -->
+<script>
+    var savedCart
+    // get Cart in LocalStorage when refresh page and show total quantity product 
+    if (localStorage.getItem('cart')) {
+        savedCart = JSON.parse(localStorage.getItem('cart'))
+        const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
+        document.getElementById("totalProductBuy").textContent = totalProductBuy
+    } 
+</script>
+
 <div class="header__container">
     <div class="header-banner"
         style="background: url(//theme.hstatic.net/1000026716/1000440777/14/bn-top2.jpg?v=36855); height: 50px">
@@ -6,7 +29,7 @@
         <div class="container">
             <div class="row">
                 <div class="left_header">
-                    <img src="./assets/logo.svg" width="170px" />
+                    <a href="/"><img src="./assets/logo.svg" width="170px" /></a>
                 </div>
                 <div class="right_header">
                     <div class="search_container">
@@ -33,7 +56,7 @@
                                 <img src="//theme.hstatic.net/1000026716/1000440777/14/ak4.png?v=36838" width="24px">
                                 <span class="text">Khuyến mãi</span>
                             </a>
-                            <a href="/" style="position: relative;">
+                            <a href="/cartpage.html" style="position: relative;">
                                 <img src="//theme.hstatic.net/1000026716/1000440777/14/ak5.png?v=36838" width="24px">
                                 <div id="totalProductBuy" style=" position: absolute; top: -7px; width: 15px; height: 15px;
                                     background-color: #ea1c00; border-radius: 50%; left: 12px; z-index: 100000; color:
@@ -83,40 +106,46 @@
     <div class="gearvn-content-section">
         <div class="container">
             <div class="list-item">
-                <i class="fa-solid fa-list-ul" style="color: white;"></i>
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="-0.00012207" y="0.000190735" width="18" height="2" rx="1" fill="white"></rect>
+                    <rect x="-0.00012207" y="5.99999" width="18" height="2" rx="1" fill="white"></rect>
+                    <rect x="-0.00012207" y="12.0001" width="18" height="2" rx="1" fill="white"></rect>
+                </svg>
                 <span class="text">
                     Danh mục sản phẩm
                 </span>
             </div>
-            <a class="list-select" href="/">
-                <div>
-                    <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=36838" width="18px">
-                    <span>Hướng dẫn thanh toán</span>
-                </div>
-            </a>
+            <div style="display: flex; margin-left: 5px; width: 80%;">
+                <a class="list-select" href="/">
+                    <div>
+                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=36838" width="18px">
+                        <span>Hướng dẫn thanh toán</span>
+                    </div>
+                </a>
 
-            <a class="list-select" href="/">
-                <div>
-                    <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=36838" width="18px">
-                    <span>Hướng dẫn trả góp</span>
-                </div>
-            </a>
-
-
-            <a class="list-select" href="/">
-                <div>
-                    <img src="//theme.hstatic.net/1000026716/1000440777/14/xk4s.png?v=36855" width="18px">
-                    <span>Chính sách bảo hành</span>
-                </div>
-            </a>
+                <a class="list-select" href="/">
+                    <div>
+                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk2.png?v=36838" width="18px">
+                        <span>Hướng dẫn trả góp</span>
+                    </div>
+                </a>
 
 
-            <a class="list-select" href="/">
-                <div>
-                    <img src="//theme.hstatic.net/1000026716/1000440777/14/xk5.png?v=36855" width="18px">
-                    <span>Chính sách vận chuyển</span>
-                </div>
-            </a>
+                <a class="list-select" href="/">
+                    <div>
+                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk4s.png?v=36855" width="18px">
+                        <span>Chính sách bảo hành</span>
+                    </div>
+                </a>
+
+
+                <a class="list-select" href="/">
+                    <div>
+                        <img src="//theme.hstatic.net/1000026716/1000440777/14/xk5.png?v=36855" width="18px">
+                        <span>Chính sách vận chuyển</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

@@ -1,4 +1,14 @@
 <script>
+    var savedCart
+    // get Cart in LocalStorage when refresh page and show total quantity product 
+    if (localStorage.getItem('cart')) {
+        savedCart = JSON.parse(localStorage.getItem('cart'))
+        const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
+        document.getElementById("totalProductBuy").textContent = totalProductBuy
+    } 
+</script>
+
+<script>
     const typeLap = {
         ASUS: 'asus',
         MSI: 'msi',
@@ -14,8 +24,8 @@
             type: typeLap.ASUS,
             title: 'Laptop ASUS ProArt Studiobook 16 OLED H7600ZM L2079W',
             img: 'https://product.hstatic.net/200000722513/product/t-studiobook-16-oled-h7600zm-l2079w-1_aa5729e447954951b9f46f79e2d81999_8f8c86376eca47cabedd3c1bd58f80d6_grande.png',
-            old_price: "69.990.000₫",
-            new_price: "57.990.000₫",
+            old_price: "69990000",
+            new_price: "57990000",
             percentage: "-17%"
         },
         {
@@ -23,8 +33,8 @@
             type: typeLap.ASUS,
             title: 'Laptop ASUS ProArt Studiobook 16 OLED H7600ZM L2079W',
             img: 'https://product.hstatic.net/200000722513/product/t-studiobook-16-oled-h7600zm-l2079w-1_aa5729e447954951b9f46f79e2d81999_8f8c86376eca47cabedd3c1bd58f80d6_grande.png',
-            old_price: "69.990.000₫",
-            new_price: "57.990.000₫",
+            old_price: "69990000",
+            new_price: "57990000",
             percentage: "-17%"
         },
         {
@@ -32,8 +42,8 @@
             type: typeLap.ASUS,
             title: 'Laptop ASUS ProArt Studiobook Pro 16 OLED W7600Z3A L2048W',
             img: 'https://product.hstatic.net/200000722513/product/diobook-pro-16-oled-w7600z3a-l2048w-1_acda9b80ce8b4d50ae41cb6d4b28eced_0ab4e3bafba04405b2f68aac8147e9a4_grande.png',
-            old_price: "82.990.000₫",
-            new_price: "69.990.000₫",
+            old_price: "82990000",
+            new_price: "69990000",
             percentage: "-17%"
         },
         {
@@ -41,8 +51,8 @@
             type: typeLap.ASUS,
             title: 'Laptop ASUS Vivobook 14X OLED A1403ZA KM066W',
             img: 'https://product.hstatic.net/200000722513/product/km066-ban-chay_b3656fe6bfb24b5d8dd163b3431f0c5c_grande.png',
-            old_price: "20.990.000₫",
-            new_price: "14.990.000₫",
+            old_price: "20990000",
+            new_price: "14990000",
             percentage: "-17%"
         },
         {
@@ -50,8 +60,8 @@
             type: typeLap.ASUS,
             title: 'Laptop ASUS Vivobook 14X OLED A1403ZA KM161W',
             img: 'https://product.hstatic.net/200000722513/product/us-vivobook-14x-oled-a1403za-km161w-1_1e8085b65dd74b46b5a3049e1babee6f_e91ef40113f24b75adf181be03475edd_grande.png',
-            old_price: "20.990.000₫",
-            new_price: "14.990.000₫",
+            old_price: "20990000",
+            new_price: "14990000",
             percentage: "-17%"
         },
         {
@@ -59,8 +69,8 @@
             type: typeLap.ASUS,
             title: 'Laptop Asus Vivobook 15 X515EA BR2045W',
             img: 'https://product.hstatic.net/200000722513/product/top-asus-vivobook-15-x515ea-br2045w-1_f7e2bdc9339d400ea1fa3943e7abccba_d045876cfa27422cb4c0ef26bd660f65_grande.png',
-            old_price: "16.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "16990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -68,8 +78,8 @@
             type: typeLap.MSI,
             title: 'Laptop MSI Creator Z16 A11UET 025VN',
             img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
-            old_price: "16.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "16990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -77,8 +87,8 @@
             type: typeLap.MSI,
             title: 'Laptop MSI Creator Z16 A11UET 025VN',
             img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
-            old_price: "16.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "16990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -86,24 +96,24 @@
             type: typeLap.MSI,
             title: 'Laptop MSI Creator M16 B13VE 830VN',
             img: "https://product.hstatic.net/200000722513/product/laptop-msi-creator-z16-a11uet-025vn-1_7d9d4b9e40ac4c4497a1acfd999e4fd3_353be3dcfc9e4439837e454acd028e95_grande.png",
-            old_price: "45.990.000₫",
-            new_price: "34.990.000₫",
+            old_price: "45990000",
+            new_price: "34990000",
             percentage: "-17%"
         }, {
             id: "10",
             type: typeLap.MSI,
             title: 'Laptop MSI Creator Z16 HX Studio B13VFTO 063VN',
             img: "https://product.hstatic.net/200000722513/product/063vn_54f15e9f0d864470b6f381602fa7b1d8_453438f1b4964374924093ce75b3906c_grande.png",
-            old_price: "23.990.000₫",
-            new_price: "15.990.000₫",
+            old_price: "23990000",
+            new_price: "15990000",
             percentage: "-17%"
         }, {
             id: "11",
             type: typeLap.MSI,
             title: 'Laptop MSI Creator M16 B13VE 830VN',
             img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
-            old_price: "16.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "16990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -111,8 +121,8 @@
             type: typeLap.MSI,
             title: 'Laptop MSI Creator Z16 A11UET 025VN',
             img: "https://product.hstatic.net/200000722513/product/830vn_40cf51ce70d84e4782538fa63730f733_17407151dfe349a9845d1ab9f91a871c_grande.png",
-            old_price: "16.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "16990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -120,8 +130,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo IdeaPad 1 15AMN7 82VG0022VN',
             img: "https://product.hstatic.net/200000722513/product/-lenovo-ideapad-1-15amn7-82vg0022vn-1_a27e87f1ca374e9f9f9706b46f522bf2_a981a1a533894e28b7cde6e59a2feed2_grande.png",
-            old_price: "33.990.000₫",
-            new_price: "29.990.000₫",
+            old_price: "33990000",
+            new_price: "29990000",
             percentage: "-17%"
         },
         {
@@ -129,8 +139,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo ThinkPad E14 21E300E3VN',
             img: "https://product.hstatic.net/200000722513/product/ptop-lenovo-thinkpad-e14-21e300e3vn-1_6d3de771290643da9c66a438269f6905_a34e1fec65984b57889f670c928f8542_master.png",
-            old_price: "39.990.000₫",
-            new_price: "35.990.000₫",
+            old_price: "39990000",
+            new_price: "35990000",
             percentage: "-17%"
         },
         {
@@ -138,8 +148,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo Ideapad 5 Pro 14ITL6 82L300MAVN',
             img: "https://product.hstatic.net/200000722513/product/82l300mavn_4d1d60d9c525463990f5a6e0d9ba6bc6_8e0b838478004c1c8c1176bc9b3ab32e_grande.png",
-            old_price: "55.990.000₫",
-            new_price: "49.990.000₫",
+            old_price: "55990000",
+            new_price: "49990000",
             percentage: "-17%"
         },
         {
@@ -147,8 +157,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo IdeaPad 1 15AMN7 82VG0022VN',
             img: "https://product.hstatic.net/200000722513/product/-lenovo-ideapad-1-15amn7-82vg0022vn-1_a27e87f1ca374e9f9f9706b46f522bf2_a981a1a533894e28b7cde6e59a2feed2_grande.png",
-            old_price: "33.990.000₫",
-            new_price: "29.990.000₫",
+            old_price: "33990000",
+            new_price: "29990000",
             percentage: "-17%"
         },
         {
@@ -156,8 +166,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo IdeaPad 5 14ABA7 82SE007DVN',
             img: "https://product.hstatic.net/200000722513/product/82se007dvn_f002bf7bbbbf4c35be3de1060dfb38ff_4c0ca26f994742e898fa200e1e848e8f_grande.png",
-            old_price: "19.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "19990000",
+            new_price: "12990000",
             percentage: "-17%"
         },
         {
@@ -165,8 +175,8 @@
             type: typeLap.LENOVO,
             title: 'Laptop Lenovo IdeaPad 5 14ABA7 82SE007DVN',
             img: "https://product.hstatic.net/200000722513/product/82se007dvn_f002bf7bbbbf4c35be3de1060dfb38ff_4c0ca26f994742e898fa200e1e848e8f_grande.png",
-            old_price: "19.990.000₫",
-            new_price: "12.990.000₫",
+            old_price: "19990000",
+            new_price: "12990000",
             percentage: "-17%"
         }
     ]
@@ -177,7 +187,7 @@
 
     var selectedElement = document.querySelector(".mySwiper-laptop .swiper-wrapper")
 
-    var cart = [];
+    var cart = localStorage.getItem("cart") ? savedCart : [];
 
     // create the list type of laptop in UI 
     var manufacturerElement = document.querySelector(".laptop .section-heading .box-right");
@@ -229,14 +239,14 @@
             divOldPrice.className = "old_price"
             var spanEl = document.createElement("span")
             spanEl.className = "number"
-            spanEl.innerText = product.old_price
+            spanEl.innerText = Number(product.old_price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
             divOldPrice.appendChild(spanEl)
 
             var divNewPrice = document.createElement("div")
             divNewPrice.className = "new_price"
             var spanEl1 = document.createElement("span")
             spanEl1.className = "number"
-            spanEl1.innerText = product.new_price
+            spanEl1.innerText = Number(product.new_price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
             var spanEl2 = document.createElement("span")
             spanEl2.className = "percentage"
             spanEl2.innerText = product.percentage
@@ -256,8 +266,9 @@
                 } else {
                     existingItem.quantity += 1
                 }
+                // update Cart in LocalStorage when add, minus, remove item 
                 localStorage.setItem('cart', JSON.stringify(cart));
-                const savedCart = JSON.parse(localStorage.getItem('cart'))
+                savedCart = JSON.parse(localStorage.getItem('cart'))
                 const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
                 document.getElementById("totalProductBuy").textContent = totalProductBuy
             })
@@ -293,14 +304,14 @@
             divOldPrice.className = "old_price"
             var spanEl = document.createElement("span")
             spanEl.className = "number"
-            spanEl.innerText = product.old_price
+            spanEl.innerText = Number(product.old_price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
             divOldPrice.appendChild(spanEl)
 
             var divNewPrice = document.createElement("div")
             divNewPrice.className = "new_price"
             var spanEl1 = document.createElement("span")
             spanEl1.className = "number"
-            spanEl1.innerText = product.new_price
+            spanEl1.innerText = Number(product.new_price).toLocaleString('vi', { style: 'currency', currency: 'VND' });
             var spanEl2 = document.createElement("span")
             spanEl2.className = "percentage"
             spanEl2.innerText = product.percentage
@@ -320,23 +331,15 @@
                 } else {
                     existingItem.quantity += 1
                 }
+                // update Cart in LocalStorage when add, minus, remove item 
                 localStorage.setItem('cart', JSON.stringify(cart));
-                const savedCart = JSON.parse(localStorage.getItem('cart'))
+                savedCart = JSON.parse(localStorage.getItem('cart'))
                 const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
                 document.getElementById("totalProductBuy").textContent = totalProductBuy
             })
         })
     }
 </script>
-
-<script>
-    if (localStorage.getItem('cart')) {
-        const savedCart = JSON.parse(localStorage.getItem('cart'))
-        const totalProductBuy = savedCart.reduce((sum, item) => sum + item.quantity, 0)
-        document.getElementById("totalProductBuy").textContent = totalProductBuy
-    } 
-</script>
-
 
 <script>
     var swiper = new Swiper(".mySwiper-laptop", {
